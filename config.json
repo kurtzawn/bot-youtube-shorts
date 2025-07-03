@@ -1,26 +1,50 @@
 {
-    "youtube_settings": {
-        "channel_name": "Motivasi Islam"
-    },
+  "bot_mode": "quotes",
+  "youtube_settings": {
+    "channel_name": "Motivasi Islam"
+  },
+  "api_secrets": {
+    "pexels": "PEXELS_API_KEY",
+    "gemini": "GEMINI_API_KEY",
+    "google_client": "GOOGLE_CLIENT_SECRET_JSON",
+    "google_token": "GOOGLE_TOKEN_JSON"
+  },
+  "quote_bot_config": {
+    "source_file": "quotes.txt",
+    "pexels_keyword": "nature",
     "video_settings": {
-        "keyword_pexels": "nature",
-        "duration_seconds": 15
+      "duration_seconds": 15
     },
     "audio_settings": {
-        "music_folder": "music",
-        "selection_mode": "random",
-        "music_filename": "inspirasi1.mp3"
+      "music_folder": "music"
     },
     "text_settings": {
-        "font_path": "font/Oswald-Bold.ttf",
-        "font_size": 65,
-        "font_color": "white",
-        "vertical_align": 0.35,
-        "background_color": "black@0.6",
-        "outline_color": "white",
-        "outline_size": 3
+      "font_path": "font/Oswald-Bold.ttf",
+      "font_size": 75,
+      "font_color": "white",
+      "vertical_align": 0.5,
+      "background_color": "black@0.6"
     },
-    "ai_settings": {
-    "prompt": "Anda adalah seorang ahli SEO YouTube Shorts. Berdasarkan kutipan inspirasional berikut: '{quote}', buat konten dalam format JSON yang ketat tanpa teks tambahan di luar JSON. Buat 'title' yang viral, singkat, dan menarik (maksimal 100 karakter). Untuk bagian 'hashtags', WAJIB sertakan 'motivasiislam' dan tambahkan beberapa hashtag relevan lainnya. {{ \"title\": \"\", \"description\": \"\", \"hashtags\": [], \"tags\": [] }}"
+    "ai_prompt": "Anda adalah seorang ahli SEO YouTube Shorts. Berdasarkan kutipan inspirasional berikut: '{quote}', buat konten dalam format JSON ketat. Buat 'title' viral dan singkat (maks 100 karakter, JANGAN mengandung #). Untuk bagian 'hashtags', WAJIB sertakan 'motivasiislam'. {{ \"title\": \"\", \"description\": \"\", \"hashtags\": [], \"tags\": [] }}"
+  },
+  "news_bot_config": {
+    "google_trends": {
+      "geo": "ID",
+      "hours": 4
+    },
+    "video_settings": {
+      "duration_seconds": 59
+    },
+    "audio_settings": {
+      "news_music_folder": "music"
+    },
+    "text_settings": {
+      "font_path": "font/Oswald-Bold.ttf",
+      "font_size": 55,
+      "font_color": "white",
+      "vertical_align": 0.85,
+      "background_color": "black@0.7"
+    },
+    "ai_prompt": "Anda adalah seorang jurnalis TV. Berdasarkan kumpulan judul berita ini: '{CONTEXT}', tulis naskah berita singkat (sekitar 150 kata). Setelah itu, buat output dalam format JSON ketat. Isi 'title' dengan judul berita utama yang menarik (maks 100 karakter, JANGAN mengandung #). Isi 'description'. Isi 'hashtags' dengan 10 hashtag relevan. {{ \"title\": \"\", \"description\": \"\", \"hashtags\": [], \"tags\": [] }}"
   }
 }
