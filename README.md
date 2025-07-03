@@ -81,18 +81,42 @@ Ini adalah bagian terpenting untuk memberikan izin kepada bot agar bisa menguplo
 
 ### Langkah 3: Konfigurasi GitHub Secrets dan Variables
 
-Ini adalah langkah terakhir untuk membuat bot berjalan otomatis.
+## 🔑 Penyiapan Lisensi, Secrets, dan Variables
 
-1.  Buka repositori GitHub Anda, pergi ke `Settings > Secrets and variables > Actions`.
+Ini adalah langkah terakhir dan paling penting untuk membuat bot berjalan otomatis. Di sini kita akan menyimpan semua kunci rahasia dan konfigurasi di GitHub.
 
-2.  **Pada tab `Secrets`**, klik `New repository secret` untuk membuat semua *secret* di bawah ini:
+### 1. Dapatkan Lisensi Anda (Wajib)
 
-| Nama Secret | Sumber Nilai |
+Bot ini memerlukan kunci lisensi (berupa email yang terdaftar) untuk dapat berfungsi. Tanpa lisensi yang valid, eksekusi akan otomatis berhenti.
+
+-   **Link Pembelian Lisensi:**
+    **[https://lynk.id/botxautomation/17ege0lk6607/](https://lynk.id/botxautomation/17ege0lk6607/)**
+
+Setelah Anda memiliki lisensi, lanjutkan ke langkah berikutnya.
+
+### 2. Konfigurasi di Pengaturan Repositori GitHub
+
+Buka repositori GitHub Anda, lalu pergi ke `Settings > Secrets and variables > Actions`.
+
+#### Pada tab "Secrets"
+
+Klik `New repository secret` untuk membuat **semua** *secret* di bawah ini. Pastikan penamaan **sama persis**.
+
+| Nama Secret | Sumber Nilai / Keterangan |
 | :--- | :--- |
 | `GOOGLE_CLIENT_SECRET_JSON` | Salin **seluruh isi** file `client_secret.json` Anda dan tempel di sini. |
 | `GOOGLE_TOKEN_JSON` | Salin **seluruh isi** file `token.json` Anda dan tempel di sini. |
-| `PEXELS_API_KEY` | API Key dari Pexels. |
+| `PEXELS_API_KEY` | API Key dari akun Pexels Anda. |
 | `GEMINI_API_KEY` | API Key dari Google AI Studio. |
+| `BOT_LICENSE_EMAIL` | Isi dengan alamat **email** yang Anda gunakan untuk membeli lisensi. |
+
+#### Pada tab "Variables"
+
+Pindah ke tab `Variables` di sebelahnya, lalu klik `New repository variable` untuk membuat *variable* ini:
+
+| Nama Variable | Contoh Nilai |
+| :--- | :--- |
+| `CHANNEL_NAME`| `Kutipan Harian` |
 
 3.  **Pada tab `Variables`**, klik `New repository variable` untuk membuat *variable* ini:
 
