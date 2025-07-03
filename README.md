@@ -110,14 +110,6 @@ Klik `New repository secret` untuk membuat **semua** *secret* di bawah ini. Past
 | `GEMINI_API_KEY` | API Key dari Google AI Studio. |
 | `BOT_LICENSE_EMAIL` | Isi dengan alamat **email** yang Anda gunakan untuk membeli lisensi. |
 
-#### Pada tab "Variables"
-
-Pindah ke tab `Variables` di sebelahnya, lalu klik `New repository variable` untuk membuat *variable* ini:
-
-| Nama Variable | Contoh Nilai |
-| :--- | :--- |
-| `CHANNEL_NAME`| `Kutipan Harian` |
-
 3.  **Pada tab `Variables`**, klik `New repository variable` untuk membuat *variable* ini:
 
 | Nama Variable | Contoh Nilai |
