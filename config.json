@@ -1,0 +1,26 @@
+{
+    "youtube_settings": {
+        "channel_name": "Motivasi Islam"
+    },
+    "video_settings": {
+        "keyword_pexels": "nature",
+        "duration_seconds": 15
+    },
+    "audio_settings": {
+        "music_folder": "music",
+        "selection_mode": "random",
+        "music_filename": "inspirasi1.mp3"
+    },
+    "text_settings": {
+        "font_path": "font/Oswald-Bold.ttf",
+        "font_size": 65,
+        "font_color": "white",
+        "vertical_align": 0.35,
+        "background_color": "black@0.6",
+        "outline_color": "white",
+        "outline_size": 3
+    },
+    "ai_settings": {
+    "prompt": "Anda adalah seorang ahli SEO YouTube Shorts. Berdasarkan kutipan inspirasional berikut: '{quote}', buat konten dalam format JSON yang ketat tanpa teks tambahan di luar JSON. Buat 'title' yang viral, singkat, dan menarik (maksimal 100 karakter). Untuk bagian 'hashtags', WAJIB sertakan 'motivasiislam' dan tambahkan beberapa hashtag relevan lainnya. {{ \"title\": \"\", \"description\": \"\", \"hashtags\": [], \"tags\": [] }}"
+  }
+}

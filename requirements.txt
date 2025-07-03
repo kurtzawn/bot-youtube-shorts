@@ -1,0 +1,15 @@
+# requirements.txt
+
+# Untuk video editing dan dependensinya yang kompatibel
+moviepy==1.0.3
+Pillow==9.5.0
+
+# Library untuk komputasi, dibutuhkan untuk konversi gambar
+numpy
+
+# Library untuk panggilan API langsung (seperti curl) dan download
+requests
+
+# Library lain
+google-generativeai
+playwright
