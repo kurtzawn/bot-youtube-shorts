@@ -1,0 +1,34 @@
+name: Unzip and Push
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository with PAT
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Extract ZIP directly to root
+        run: |
+          unzip -o ytbshorts.zip
+          ls -lah
+
+      - name: Commit and push
+        env:
+          TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git pull origin main
+          git add .
+          git commit -m "Unzipped files directly to root" || echo "Nothing to commit"
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository_owner }}/Auto-Tweet-News-AI.git
+          git push origin HEAD:main
