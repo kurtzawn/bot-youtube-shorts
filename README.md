@@ -59,13 +59,59 @@ Ini adalah bagian terpenting untuk memberikan izin kepada bot agar bisa menguplo
 
 **B. Dapatkan Kunci `token.json` di Komputer Anda**
 
-1.  **Buat File Otorisasi**: Buat file baru bernama `authorize.js` di folder proyek Anda dan isi dengan kode ini:
+1.  **Buat File Otorisasi (`authorize.js`)**
+    -   Di folder proyek utama Anda, buat sebuah file baru dan beri nama **`authorize.js`**.
+    -   Salin dan tempel **seluruh kode** di bawah ini ke dalam file `authorize.js` tersebut:
+
     ```javascript
-    import { authorize } from './lib.js';
-    console.log("Memulai proses otorisasi satu kali...");
-    authorize().then(() => {
-        console.log("\n✅ Otorisasi berhasil! File 'token.json' telah dibuat.");
-    }).catch(console.error);
+    // File: authorize.js
+    // Skrip ini hanya untuk dijalankan satu kali di komputer lokal
+    // untuk menghasilkan file token.json
+
+    import { google } from 'googleapis';
+    import { authenticate } from '@google-cloud/local-auth';
+    import fs from 'fs/promises';
+    import path from 'path';
+    import process from 'process';
+
+    const log = (message) => console.log(`[AUTH] ${message}`);
+
+    const __dirname = path.dirname(new URL(import.meta.url).pathname.substring(1));
+    const CREDENTIALS_PATH = path.join(__dirname, 'client_secret.json');
+    const TOKEN_PATH = path.join(__dirname, 'token.json');
+    const SCOPES = ['[https://www.googleapis.com/auth/youtube.upload](https://www.googleapis.com/auth/youtube.upload)'];
+
+    async function saveCredentials(client) {
+        const content = await fs.readFile(CREDENTIALS_PATH, 'utf-8');
+        const keys = JSON.parse(content);
+        const key = keys.installed || keys.web;
+        const payload = JSON.stringify({
+            type: 'authorized_user',
+            client_id: key.client_id,
+            client_secret: key.client_secret,
+            refresh_token: client.credentials.refresh_token,
+        });
+        await fs.writeFile(TOKEN_PATH, payload);
+    }
+
+    async function runAuthorization() {
+        try {
+            log("Memulai alur otorisasi baru...");
+            const client = await authenticate({
+                scopes: SCOPES,
+                keyfilePath: CREDENTIALS_PATH,
+            });
+            if (client.credentials) {
+                await saveCredentials(client);
+                log("\n✅ Otorisasi berhasil! File 'token.json' telah dibuat.");
+                log("Anda sekarang bisa menyalin isi 'client_secret.json' dan 'token.json' ke GitHub Secrets.");
+            }
+        } catch (e) {
+            console.error("Gagal melakukan otorisasi:", e);
+        }
+    }
+
+    runAuthorization();
     ```
 2.  **Jalankan Skrip**: Di terminal Anda (pastikan berada di dalam folder proyek), jalankan:
     ```bash
