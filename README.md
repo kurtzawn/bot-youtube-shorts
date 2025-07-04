@@ -162,19 +162,6 @@ Klik `New repository secret` untuk membuat **semua** *secret* di bawah ini. Past
 | :--- | :--- |
 | `CHANNEL_NAME`| `Kutipan Harian` |
 
-4.  **Amankan File Lokal Anda**:
-    -   Buat file bernama `.gitignore` di folder proyek Anda.
-    -   Pastikan file tersebut berisi baris-baris berikut agar file rahasia Anda tidak terunggah:
-        ```
-        node_modules/
-        client_secret.json
-        token.json
-        *.log
-        output/
-        downloads/
-        ```
-5.  **Push Kode Anda**: Lakukan `git add .`, `git commit`, dan `git push` untuk menyimpan semua file proyek Anda (kecuali yang ada di `.gitignore`).
-
 ---
 
 ## 🚀 Menjalankan Bot
