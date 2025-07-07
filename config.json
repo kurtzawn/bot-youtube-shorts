@@ -12,39 +12,27 @@
   "quote_bot_config": {
     "source_file": "quotes.txt",
     "pexels_keyword": "nature",
+    "footage_count": 7,
     "video_settings": {
-      "duration_seconds": 15
+      "duration_seconds": 30
     },
     "audio_settings": {
       "music_folder": "music"
     },
     "text_settings": {
       "font_path": "font/Oswald-Bold.ttf",
-      "font_size": 75,
+      "font_size": 55,
       "font_color": "white",
       "vertical_align": 0.3,
-      "background_color": "rgba(0, 0, 0, 0.5)"
+      "background_color": "rgba(0,0,0,0.5)"
     },
-    "ai_prompt": "Anda adalah seorang ahli SEO YouTube Shorts. Berdasarkan kutipan inspirasional berikut: '{quote}', buat konten dalam format JSON ketat. Buat 'title' viral dan singkat (maks 100 karakter, JANGAN mengandung #). Untuk bagian 'hashtags', WAJIB sertakan 'motivasiislam'. {{ \"title\": \"\", \"description\": \"\", \"hashtags\": [], \"tags\": [] }}"
+    "ai_prompt": "Anda adalah seorang konten kreator YouTube Shorts niche quotes. Berdasarkan kutipan inspirasional berikut: '{quote}', buat konten dalam format JSON ketat. Buat 'title' viral dan singkat (maks 100 karakter, JANGAN mengandung #), format 'title' Motivasi Islam: (hasil gengerate ai) #motivasi #quotes #motivasiislam. Untuk bagian 'hashtags', WAJIB sertakan 'motivasiislam'. {{ \"title\": \"\", \"description\": \"\", \"hashtags\": [], \"tags\": [] }}"
   },
   "news_bot_config": {
     "google_trends": {
       "geo": "ID",
       "hours": 4
     },
-    "video_settings": {
-      "duration_seconds": 59
-    },
-    "audio_settings": {
-      "news_music_folder": "music"
-    },
-    "text_settings": {
-      "font_path": "font/Oswald-Bold.ttf",
-      "font_size": 55,
-      "font_color": "white",
-      "vertical_align": 0.85,
-      "background_color": "black@0.7"
-    },
-    "ai_prompt": "Anda adalah seorang jurnalis TV. Berdasarkan kumpulan judul berita ini: '{CONTEXT}', tulis naskah berita singkat (sekitar 150 kata). Setelah itu, buat output dalam format JSON ketat. Isi 'title' dengan judul berita utama yang menarik (maks 100 karakter, JANGAN mengandung #). Isi 'description'. Isi 'hashtags' dengan 10 hashtag relevan. {{ \"title\": \"\", \"description\": \"\", \"hashtags\": [], \"tags\": [] }}"
+    "music_folder": "music"
   }
 }
